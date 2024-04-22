@@ -9,6 +9,10 @@ def flood_fill(image, x,y):
 
     image[y][x] = 2
 
+    plt.imshow(image)
+    plt.pause(0.05)
+    plt.clf()
+
     flood_fill(image, x+1, y)
     flood_fill(image, x-1, y)
     flood_fill(image, x, y+1)
@@ -20,12 +24,12 @@ def flood_fill(image, x,y):
 
 def main():
     #img = plt.imread("files/img0.png")[:, :, 0]
-    #img = plt.imread("files/img1.png")[:, :, 0]
-    img = plt.imread("files/img2.png")[:, :, 0]
+    img = plt.imread("files/img1.png")[:, :, 0]
+    #img = plt.imread("files/img2.png")[:, :, 0]
 
     image = flood_fill(img, 2, 0)
 
-    plt.imshow(img, cmap="BrBG_r")
+    plt.imshow(img, cmap="gray")
     plt.show(block=False)
     plt.pause(5)
     plt.clf()
